@@ -77,7 +77,7 @@ let employees = [
 let uniqueCountries = employees.reduce((countriesArray, employee) =>
 	{
 		let country = employee.country;
-		if(countriesArray.includes(country)===false)
+		if(countriesArray.includes(country) === false)
 			countriesArray.push(country);
 		return countriesArray;
 	}, []);
@@ -94,7 +94,7 @@ console.log(sentences.some(sentence => sentence.toLowerCase().includes("weather"
 
 //ES5
 
-function AnimalES5(name, age){
+let AnimalES5 = function(name, age){
 	this.name = name;
 	this.age = age;
 }
@@ -107,7 +107,7 @@ let animal1 = new AnimalES5("Betty", 5);
 
 animal1.sayHello();
 
-function CatES5(name, age, breed, bold){
+let CatES5 = function(name, age, breed, bold){
 	AnimalES5.call(this, name, age);
 	this.breed = breed;
 	this.bold = bold;
@@ -126,7 +126,7 @@ console.log(`cat1 instanceof AnimalES5: ${cat1 instanceof AnimalES5}`);
 
 //приватні поля та методи
 
-function DogES5(name, birthDate, breed){
+let DogES5 = function(name, birthDate, breed){
 	this.name = name;
 	this.birthDate = birthDate;
 	this.breed = breed;
@@ -217,7 +217,7 @@ class DogES6{
 		this.#age = this.#calculateAge();
 	}
 
-	getAge(){
+	get age(){
 		return this.#age;
 	}
 
@@ -243,4 +243,4 @@ class DogES6{
 
 let dog2 = new DogES6("Jack", "2019.01.11", "toy-terier");
 
-console.log(dog2.getAge());
+console.log(dog2.age);
